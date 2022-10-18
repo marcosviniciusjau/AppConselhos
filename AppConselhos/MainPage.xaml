@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppConselhos.MainPage">
+
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <StackLayout Padding="20,20,50,20" HorizontalOptions="Start" >
+                 <Entry x:Name="conselhoEntry" TextColor="OrangeRed"/>
+            </StackLayout>
+            <StackLayout Padding="10,10,10,10" VerticalOptions="Center">
+                <Button x:Name="btnConselho" Text="Conselho" WidthRequest="105"
+                        BorderWidth="1" Clicked="btnConselho_Clicked" BackgroundColor="OrangeRed"/>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout Padding="70,70,70,70" HorizontalOptions="CenterAndExpand" >
+            <Image x:Name="imgTempo"/>
+            
+            <Label Text="Id" TextColor="OrangeRed"/>
+            <Label Text="{Binding Id}" TextColor="OrangeRed"/>
+            <Label Text="Descrição" TextColor="OrangeRed"/>
+            <Label Text="{Binding Descricao}" TextColor="OrangeRed"/>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
