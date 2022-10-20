@@ -18,7 +18,7 @@ namespace AppConselhos
         {
             InitializeComponent();
           
-            this.Descricao = "Conselhos";l
+            this.Descricao = "Conselhos";
             this.BindingContext = new Conselho();
         }
 
