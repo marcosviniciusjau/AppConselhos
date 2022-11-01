@@ -18,13 +18,13 @@ namespace AppConselhos.Services
 
             string queryString = "https://api.adviceslip.com/advice" + conselho;
 
-            dynamic resultado = await getDataFromService(queryString).ConfigureAwait(false);
+          
 
-            if (resultado["weather"] != null)
+            if (conselho != null)
             {
                 Conselho conselho_descricao = new Conselho();
 
-                conselho_descricao.Descricao = (string)resultado["main"]["desc"];
+                conselho_descricao.Descricao = (string)conselho;
 
                 return conselho_descricao;
             }

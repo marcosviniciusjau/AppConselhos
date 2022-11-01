@@ -18,7 +18,7 @@ namespace AppConselhos
         {
             InitializeComponent();
           
-            this.Descricao = "Conselhos";
+            this.Title = "Conselhos";
             this.BindingContext = new Conselho();
         }
 
@@ -26,12 +26,13 @@ namespace AppConselhos
         {
             try
             {
-                if (!String.IsNullOrEmpty(conselhoEntry.Text))
-                {
-                    Conselho conselho = await DataServices.GetConselho(conselhoEntry.Text);
+                Conselho conselho_descricao = await DataServices.GetConselho(cidadeEntry.Text);
+
+                Task<Conselho> conselho = DataServices.GetConselho( "conselho");
+                  
                     this.BindingContext = conselho;
                     btnConselho.Text = "Novo Conselho";
-                }
+              
 
             }
             catch (Exception ex)

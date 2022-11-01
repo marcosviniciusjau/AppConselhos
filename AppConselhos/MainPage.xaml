@@ -1,20 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppConselhos.MainPage">
+             x:Class="AppConselhos.MainPage"
+             BackgroundImage="conselho.png">
 
     <StackLayout>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-            <StackLayout Padding="20,20,50,20" HorizontalOptions="Start" >
-                 <Entry x:Name="conselhoEntry" TextColor="OrangeRed"/>
-            </StackLayout>
-            <StackLayout Padding="10,10,10,10" VerticalOptions="Center">
+      
+        <StackLayout Padding="120,260,100,100">
                 <Button x:Name="btnConselho" Text="Conselho" WidthRequest="105"
-                        BorderWidth="1" Clicked="btnConselho_Clicked" BackgroundColor="OrangeRed"/>
+                        BorderWidth="1" Clicked="btnConselho_Clicked" BackgroundColor="#dd997f"/>
             </StackLayout>
-        </StackLayout>
-        <StackLayout Padding="70,70,70,70" HorizontalOptions="CenterAndExpand" >
-            <Image x:Name="imgTempo"/>
+        
+        <StackLayout Padding="-100,-100,-100,-100" HorizontalOptions="CenterAndExpand" >
+            <Image x:Name="conselho"/>
             
             <Label Text="Id" TextColor="OrangeRed"/>
             <Label Text="{Binding Id}" TextColor="OrangeRed"/>
