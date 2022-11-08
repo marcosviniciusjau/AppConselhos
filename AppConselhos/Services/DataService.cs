@@ -7,31 +7,33 @@ using Newtonsoft.Json;
 using System.Net.Http;
 using System.Threading.Tasks;
 using AppConselhos.Model;
-
+using Xamarin.Forms;
 
 namespace AppConselhos.Services
 {
     public class DataServices
     {
-        public static async Task<Conselho> GetConselho(string conselho)
+        public static async Task<Conselho> GetConselho()
         {
 
-            string queryString = "https://api.adviceslip.com/advice" + conselho;
+            string queryString = "https://api.adviceslip.com/advice" ;
 
-          
+            dynamic resultado = await getDataFromService(queryString).ConfigureAwait(false);
 
-            if (conselho != null)
+            try
             {
+
                 Conselho conselho_descricao = new Conselho();
 
-                conselho_descricao.Descricao = (string)conselho;
 
                 return conselho_descricao;
             }
-            else
+            catch (Exception ex)
             {
-                return null;
+             
             }
+
+
         }
         public static async Task<dynamic> getDataFromService(string queryString)
             {
@@ -45,5 +47,10 @@ namespace AppConselhos.Services
                 }
                 return data;
             }
+
+        internal static Task<Conselho> GetConselho(Action<object, EventArgs> btnConselho_Clicked)
+        {
+            throw new NotImplementedException();
         }
+    }
     }

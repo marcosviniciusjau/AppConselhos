@@ -3,7 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppConselhos.MainPage"
              BackgroundImage="conselho.png">
-
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Lista Conselhos" Clicked="ToolbarItem_Clicked" />
+       
+    </ContentPage.ToolbarItems>
     <StackLayout>
       
         <StackLayout Padding="120,260,100,100">

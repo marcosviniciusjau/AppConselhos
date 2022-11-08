@@ -49,7 +49,7 @@ namespace AppConselhos.Helper
 
         public Task<List<Conselho>> Update(Conselho c)
         {
-            string sql = "UPDATE Produto SET NomeProduto=?, Quantidade=?,  PrecoTotal=?  PrecoUnit=? WHERE Id= ? ";
+            string sql = "UPDATE Conselho SET Descricao=? WHERE Id= ? ";
             return _conn.QueryAsync<Conselho>(sql, c.Descricao, c.Id);
         }
         // Aqui é o Método que fará o retorno de todas as linhas contidas no arquivo db3 referentes a tabela Produto. Veja que o método executa a listagem de forma assíncrona.
@@ -69,7 +69,7 @@ namespace AppConselhos.Helper
         // Aqui é o método que fará a pesquisa na tabela com base em uma string.
         public Task<List<Conselho>> Search(string q)
         {
-            string sql = "SELECT * FROM Produto WHERE Descricao LIKE '%" + q + "%' ";
+            string sql = "SELECT * FROM Conselho WHERE Descricao LIKE '%" + q + "%' ";
 
             return _conn.QueryAsync<Conselho>(sql);
         }

@@ -8,6 +8,7 @@ using Xamarin.Forms;
 
 using AppConselhos.Model;
 using AppConselhos.Services;
+using System.Collections;
 
 
 namespace AppConselhos
@@ -21,18 +22,14 @@ namespace AppConselhos
             this.Title = "Conselhos";
             this.BindingContext = new Conselho();
         }
-
         private async void btnConselho_Clicked(object sender, EventArgs e)
         {
             try
             {
-                Conselho conselho_descricao = await DataServices.GetConselho(cidadeEntry.Text);
-
-                Task<Conselho> conselho = DataServices.GetConselho( "conselho");
-                  
+               
+                    Conselho conselho_descricao = await DataServices.GetConselho();
                     this.BindingContext = conselho;
-                    btnConselho.Text = "Novo Conselho";
-              
+         
 
             }
             catch (Exception ex)
@@ -40,5 +37,10 @@ namespace AppConselhos
                 await DisplayAlert("Erro", ex.Message, "OK");
             }
         }
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Lista());
+        }
+
     }
 }
